@@ -6,7 +6,7 @@
     }],
     "routes": [
         {
-            "src": "/(.*)",
+            "src": "ToDo/(.*)",
             "dest": "to_do_app/wsgi.py"
         }
     ]
