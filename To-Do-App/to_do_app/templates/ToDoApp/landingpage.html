@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <link rel="stylesheet" href="{% static 'css/landingpage.css'%}">
+    <title>landing page</title>
+</head>
+<body>
+<div>
+    <video autoplay muted loop id="myVideo">
+        <source src="{% static 'videos/image.mp4'%}" type="video/mp4">
+        
+      </video>
+    <div class="jumbotron">
+        <h1>WELCOME TO THE</h1>
+        <h2>personal To Do App</h2>
+        <br><br>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio quasi autem veritatis optio libero expedita. Quia eveniet quam in vitae molestiae, amet quos voluptas dolorum, repellat modi itaque illum veniam.loreLorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque odit autem voluptatem, itaque vitae placeat? Voluptas illo molestias perferendis quaerat esse cum iure, fugit iste at error? Totam, cum nemo.</p>
+        <p>  Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio quasi autem veritatis optio libero expedita. Quia eveniet quam in vitae molestiae, amet quos voluptas dolorum, repellat modi itaque illum veniam.lore   Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque odit autem voluptatem, itaque vitae placeat? Voluptas illo molestias perferendis quaerat esse cum iure, fugit iste at error? Totam, cum nemo.</p>
+    
+        <a href="{% url 'ToDoApp:register' %}"><button>Register</button></a>
+        <p>or</p>
+        <a href="{% url 'ToDoApp:login' %}"><button>Signin</button></a>
+       
+    
+    </div>
+</div>
+</body>
+</html>

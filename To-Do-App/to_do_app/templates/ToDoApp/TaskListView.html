@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{%extends 'ToDoApp/base.html'%}
+{%load static%}
+
+{%block body %}
+<div class="table table-success table-striped" width="100%">
+    <table>
+        <col style="width:10%">
+        <col style="width: 30%">
+        <col style="width: 10%">
+        <col style="width: 10%">
+        <tr>
+            <th>Title</th>
+            <th>Starting Time</th>
+            <th>Status</th>
+            <th>Action</th>
+        </tr>
+        {%if tasks_list%}
+        {%for task in tasks_list %}
+        <tr>
+            
+            <td><a href="{% url 'ToDoApp:taskdetail'  task.id%}">{{task.title}}</a></td>
+            <td>{{task.starting_time.date}}({{task.starting_time.time}})</td> 
+            <td>{{task.status}}</td>
+            <td>
+                 <a href="{% url 'ToDoApp:task-update' task.id%}"><button>Edit</button></a>
+                <a href="{% url 'ToDoApp:task-delete' task.id%}"><button>Delete</button></a>
+            </td> 
+        {%endfor%} 
+        {%else%}
+            <p>no items</p>
+        {%endif%}
+    </tbody>
+</table>
+<br><br>
+</div>
+
+<a href="{%url 'ToDoApp:home'%}"><button> Back </button></a>
+{%endblock%}
