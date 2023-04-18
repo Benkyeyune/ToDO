@@ -6,7 +6,7 @@ from django.contrib.auth.views import LogoutView
 app_name = 'ToDoApp'
 
 urlpatterns = [
-    path('landingpage/',views.landingpage,name='landingpage'),
+    path('/',views.landingpage,name='landingpage'),
     path('home/',Home.as_view(),name = 'home'),
     path('listview/',TaskListView.as_view(),name = 'listview'),
     # path('register/',register.as_view(),name='register'),
