@@ -28,10 +28,11 @@
            <div class="column login">
                 <form action="" method="POST">
                     <h2>Register</h2>
-                    {%csrf_token%}
+                    
                     <!-- {{form.as_p}} -->
                     {{user_form.as_p}}
                     {{user_profile_form.as_p}}
+                    {%csrf_token%}
                     <button type="submit" class="btn btn-primary" style="background-color: lightblue;">Register</button>
                     <p>Already  have an account <a href="{%url 'ToDoApp:login'%}"> Login</a></p>
                 </form>
