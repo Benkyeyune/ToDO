@@ -133,7 +133,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-CSRF_TRUSTED_ORIGINS = ['https://*.mydomain.com','https://*.127.0.0.1']
+CSRF_TRUSTED_ORIGINS = ['https://todo-production-df7e.up.railway.app','https://*.127.0.0.1']
 
 
 STATIC_URL = 'static/'
