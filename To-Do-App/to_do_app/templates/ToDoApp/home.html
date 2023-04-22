@@ -19,6 +19,7 @@
         }
     
         .item-row{
+            width: 80%;
             background-color: #85c9ec;
             margin: 10px;
             padding: 20px;
@@ -32,6 +33,11 @@
             background-color: #ffae19;
             border-color: #e59400;
         }
+        .container1{
+            width: 100%;
+            height: 100%;
+            padding: 0%;
+        }
         /* .link {
         position: fixed;
         width: 100%;
@@ -43,17 +49,17 @@
       .h3{
         color: #f6f9fa;
       }
+      
     
     </style>
-    
+    <div class="container1">
     <h1 style="text-align: center;">My Task List</h1>
-    <div class="container">
-        <div id="search-add-wrapper">
-            <center> <form method="GET" style="display: flex; padding-left: 40%;padding-right: 35%;">
+        <div id="search-add-wrapper" style="width: 80;">
+             <form method="GET" style="display: flex; padding-left: 39%;padding-right: 35%;">
                 <input type='text' name='search-area' placeholder="Search your task" value="{{search_input}}">
                 <input class="btn btn-sm btn-info" type="submit" value='Search'>
             </form>
-        </center>
+    </div>
         <div class="center-column">
 
             {%if tasks_list%}
@@ -81,35 +87,4 @@
             <center><a href="{%url 'ToDoApp:addTask'%}" ><button class="btn btn-sm btn-info" >Add Task</button></a></center> 
         </div>    
     </div>
-    <!-- <script>
-    for(task in task_list) {
-           // Set the deadline for the task
-  var deadline = new Date('{{ task.starting_time.date|date:"M d, Y H:i:s" }}').getTime();
-
-// Find the container element for this task's countdown timer
-var container = document.getElementById('countdown-{{ task.id }}');
-
-// Create the countdown timer for this task
-var x = setInterval(function() {
-  var now = new Date().getTime();
-  var distance = deadline - now;
-  // Calculate days, hours, minutes, and seconds remaining
-  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-  // Display the countdown timer in the container element
-  container.innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
-  // If the countdown is finished, display "EXPIRED"
-  if (distance < 0) {
-    clearInterval(x);
-    container.innerHTML = "EXPIRED";
-  }
-}, 1000); 
-    }
- 
-
-      
-      
-        </script> -->
         {%endblock%}
