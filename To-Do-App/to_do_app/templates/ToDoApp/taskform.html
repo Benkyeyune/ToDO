@@ -4,13 +4,14 @@
 
 {%block body %}
 <style>
-    .container {
+    .container1 {
+    padding: 2%;
     border: 2px;
-    width: 50%;
-    height: 500px;
+    width: 90%;
+    height: 90%;
     margin: 0 auto;
     position: relative;
-    background-color: #36d8d8;
+    background-color:  #36d8d8;
     margin-bottom: 10%;
     margin-top: 10%;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
@@ -19,7 +20,7 @@
   }
 </style>
 <br>
-<div class="container">
+<div class="container1">
     <div class="">
         <form action="{%url 'ToDoApp:addTask'%}" method="POST">
             {%csrf_token%}
@@ -37,9 +38,10 @@
             <label for="status">Status: </label>
             <!-- <input type="text" name="status"  id="status"><br><br> -->
             <button type="submit" class="btn btn-sm btn-info">Add Task</button>
-              </form><br>
-              <a href="{%url 'ToDoApp:home'%}"><button class="btn btn-sm btn-info"> Back </button></a>
+            <a href="{%url 'ToDoApp:home'%}"><button class="btn btn-sm btn-info"> Back </button></a>
       
+              </form><br>
+              
         </div>
 </div>
 {%endblock%}
