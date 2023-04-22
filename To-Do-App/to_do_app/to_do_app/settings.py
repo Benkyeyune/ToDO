@@ -142,7 +142,7 @@ STATICFILES_DIRS = [
     STATIC_DIR,
 ]
 
-STATIC_ROOT =  "staticfiles/"
+STATIC_ROOT =  "/staticfiles/"
 
 
 STORAGES = {
