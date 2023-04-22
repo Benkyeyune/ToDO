@@ -56,7 +56,7 @@ class Home(LoginRequiredMixin,ListView):
             if (duration_diff.days == 0) :
                 if (time_now == reminder_time):
                     subject = task.title
-                    To_Do_email_notification(task.user.email,f'Hello <b>{task.user.first_name}</b>,<br>This is just a simple notification about your to do activity titled "{task.title}" that is scheduled to start on {task.starting_time}<br>Click here to view task: <a href="http://127.0.0.1:8000/ToDo/{task.pk}/"><b>{task.title}</b></a><br>With regards<br>Calvin<br>To-do-admin',subject)
+                    To_Do_email_notification(task.user.email,f'Hello <b>{task.user.first_name}</b>,<br>This is just a simple notification about your to do activity titled "{task.title}" that is scheduled to start on {task.starting_time}<br>Click here to view task: <a href="https://todo-production-df7e.up.railway.app/{task.pk}/"><b>{task.title}</b></a><br>With regards<br>Calvin<br>To-do-admin',subject)
                 else:pass
             else:pass
 
