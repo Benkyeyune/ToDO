@@ -1,33 +1,104 @@
 <!DOCTYPE html>
 {% load static%}
 <html lang="en">
+    <style>
+        body {
+    background-image: url('background-image-1.jpg'), url('background-image-2.jpg'), url('background-image-3.jpg');
+    background-size: cover;
+    animation: background-animation 30s ease infinite;
+  }
+  
+  @keyframes background-animation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 50px;
+    text-align: center;
+  }
+  
+  header {
+    margin-bottom: 50px;
+  }
+  
+  h1 {
+    padding-top: 10%;
+    /* padding-bottom: 30%; */
+    font-size: 50px;
+    color: #000000;
+  }
+  
+  p {
+    font-size: 20px;
+    color: #000000;
+  }
+  
+  .buttons {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    color: #000000;
+    background-color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+  }
+  
+  .button:hover {
+    background-color: #264ee0;
+  }
+
+  img{
+    padding-top: 20%;
+  }
+.container{
+
+    padding-top: 10%;
+}
+  
+    </style>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
    
     <link rel="stylesheet" href="{% static 'css/landingpage.css'%}">
+    <link rel="stylesheet" href="{% static 'css/styles.css'%}">
     <title>landing page</title>
 </head>
 <body>
-<div>
-    <video autoplay muted loop id="myVideo">
-        <source src="{% static 'videos/image.mp4'%}" type="video/mp4">
-        
-      </video>
-    <div class="jumbotron">
-        <h1>WELCOME TO THE</h1>
-        <h2>personal To Do App</h2>
-        <br><br>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio quasi autem veritatis optio libero expedita. Quia eveniet quam in vitae molestiae, amet quos voluptas dolorum, repellat modi itaque illum veniam.loreLorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque odit autem voluptatem, itaque vitae placeat? Voluptas illo molestias perferendis quaerat esse cum iure, fugit iste at error? Totam, cum nemo.</p>
-        <p>  Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio quasi autem veritatis optio libero expedita. Quia eveniet quam in vitae molestiae, amet quos voluptas dolorum, repellat modi itaque illum veniam.lore   Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque odit autem voluptatem, itaque vitae placeat? Voluptas illo molestias perferendis quaerat esse cum iure, fugit iste at error? Totam, cum nemo.</p>
-    
-        <a href="{% url 'ToDoApp:register' %}"><button>Register</button></a>
-        <p>or</p>
-        <a href="{% url 'ToDoApp:login' %}"><button>Signin</button></a>
-       
-    
+    <div class = "container"> 
+        <div class="background-container">
+            <div class="background"></div>
+        </div>
+        <div class="content">
+            <img src="{%static 'images/todo.png' %}"alt="not found">
+            <h1>Welcome to My Todo</h1>
+            <p>Get organized with our easy-to-use todo list app. Keep track of all your tasks and never forget anything important again!</p>
+            <div class="buttons">
+                <a href="{% url 'ToDoApp:login' %}" class="button">Login</a>
+                <a href="{% url 'ToDoApp:register' %}" class="button">Register</a>
+              </div>
+        </div>
+        <script src="script.js"></script>
     </div>
-</div>
+
 </body>
 </html>
