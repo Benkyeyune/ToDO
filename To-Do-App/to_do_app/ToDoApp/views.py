@@ -164,7 +164,7 @@ def register(request):
             user.set_password(user.password)
             user.save()
             subject = 'Account Creation'
-            To_Do_email_notification(user.email,f'Hello {user.first_name}\nYou have successfully created an account with us.\n \nWith regards\nCalvin\nTo-do-admin',subject)
+            To_Do_email_notification(user.email,f'Hello <b>{user.first_name}</b><br>You have successfully created an account with us.<br> With regards<br>To Do Team <br>',subject)
 
             # profile = user_profile_form.save(commit = False)
             # profile.user = user

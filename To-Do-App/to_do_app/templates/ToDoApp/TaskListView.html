@@ -23,8 +23,8 @@
             <td>{{task.starting_time.date}}({{task.starting_time.time}})</td> 
             <td>{{task.status}}</td>
             <td>
-                 <a href="{% url 'ToDoApp:task-update' task.id%}"><button>Edit</button></a>
-                <a href="{% url 'ToDoApp:task-delete' task.id%}"><button>Delete</button></a>
+                <a href="{% url 'ToDoApp:task-update' task.id%}"><button class="btn btn-sm btn-info">Update</button></a>
+                <a href="{% url 'ToDoApp:task-delete' task.id%}"><button class="btn btn-sm btn-info">Delete</button></a>
             </td> 
         {%endfor%} 
         {%else%}
@@ -35,5 +35,5 @@
 <br><br>
 </div>
 
-<a href="{%url 'ToDoApp:home'%}"><button> Back </button></a>
+<a href="{%url 'ToDoApp:home'%}"><button  class="btn btn-sm btn-info">Back</button></a>
 {%endblock%}
