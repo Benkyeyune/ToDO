@@ -2,6 +2,9 @@ from django.urls import path
 from . import views
 from .views import Home,TaskDetail,user_login, addTask,TaskUpdate,DeleteView,register,TaskListView
 from django.contrib.auth.views import LogoutView
+from django.conf import settings
+from django.conf.urls.static import static
+
 
 app_name = 'ToDoApp'
 
@@ -18,4 +21,9 @@ urlpatterns = [
     path('task-delete/<int:pk>/', DeleteView.as_view(), name='task-delete'),
     path('<int:pk>/',TaskDetail.as_view(), name='taskdetail'),
 ]
+
+
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
 
