@@ -18,7 +18,7 @@
     }
   </style>
   <div class="container2">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
       <div class="container-fluid">
         {%if request.user.is_authenticated%}
         <a class="navbar-brand" href="#">{{request.user|title}}</a>
@@ -32,10 +32,10 @@
               <a class="nav-link active" aria-current="page" href="{%url 'ToDoApp:home'%}">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{%url 'ToDoApp:listview'%}">List View</a>
+              <a class="nav-link active" href="{%url 'ToDoApp:listview'%}">List View</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{%url 'ToDoApp:addTask'%}">Add Task</a>
+              <a class="nav-link active" href="{%url 'ToDoApp:addTask'%}">Add Task</a>
             </li>
           </ul>
           <span class="navbar-text">
