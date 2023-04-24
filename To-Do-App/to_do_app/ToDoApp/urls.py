@@ -1,6 +1,6 @@
 from django.urls import path
 from . import views
-from .views import Home,TaskDetail,user_login, addTask,TaskUpdate,DeleteView,register,TaskListView
+from .views import Home,TaskDetail,user_login, addTask,TaskUpdate,DeleteView,calendar,register,TaskListView
 from django.contrib.auth.views import LogoutView
 from django.conf import settings
 from django.conf.urls.static import static
@@ -20,6 +20,7 @@ urlpatterns = [
     path('task-update<int:pk>/', TaskUpdate.as_view(), name='task-update'),
     path('task-delete/<int:pk>/', DeleteView.as_view(), name='task-delete'),
     path('<int:pk>/',TaskDetail.as_view(), name='taskdetail'),
+    path('calendar/',calendar.as_view(),name = 'calendar'),
 ]
 
 

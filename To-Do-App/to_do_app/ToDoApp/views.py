@@ -15,6 +15,7 @@ from django.contrib.auth.views import LoginView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.forms import UserCreationForm
 import datetime
+from django.views import generic
 
 
 
@@ -105,6 +106,7 @@ class addTask(LoginRequiredMixin,CreateView):
         startingtask = form.instance.starting_time.date()
         duration = datetime.datetime.now().date()
         date_diff = startingtask-duration
+        
         if (date_diff.days)>(7):
             form.add_error('starting_time','Task should not be set for a period beyond a week')
             return self.form_invalid(form)
@@ -250,3 +252,34 @@ class DeleteView(LoginRequiredMixin, DeleteView):
     context_object_name = 'tasks'
     template_name = 'ToDoApp/delete.html'
     success_url = reverse_lazy('ToDoApp:home')
+
+class calendar (LoginRequiredMixin,generic.View):
+    model = Task
+    template_name = 'ToDoApp/calendar.html'
+    context_object_name = 'task_list'
+    
+
+    def get_context_data(self,**kwargs):
+        context = super().get_context_data(**kwargs)
+        context["tasks_list"]= context['task_list'].filter(user = self.request.user)
+        return context
+    
+    
+    
+    def get(self, request, *args, **kwargs):
+        # forms = self.form_class()
+        events = Task.objects.filter    (user=request.user)
+        # events_month = Task.objects.get_running_events(user=request.user)
+        event_list = []
+        # start: '2020-09-16T16:00:00'
+        for event in events:
+            event_list.append(
+                {
+                    "title": event.title,
+                    "start": event.starting_time.strftime("%Y-%m-%dT%H:%M:%S"),
+                    "end": event.reminder_time.strftime("%Y-%m-%dT%H:%M:%S"),
+
+                }
+            )
+        context = {"events": event_list}
+        return render(request, self.template_name, context)
