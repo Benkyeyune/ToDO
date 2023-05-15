@@ -31,7 +31,7 @@ steps:
       - 'us-central1'
       - '--allow-unauthenticated'
       - '--port'
-      - '8000'
+      - '8082'
       # Add more flags if needed, such as --allow-unauthenticated
   
   # Step 4: (Optional) Run database migrations or other setup tasks
