@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 from pathlib import Path
 import os
+from pickle import APPEND
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -32,6 +33,7 @@ SECRET_KEY = "django-insecure-g#q4=hsu^2mvked3gd!nx)5j@3au!nl_san-p2)1(2&n1^t-1i
 DEBUG = True
 
 #PORT = int(os.getenv("PORT", "8000"))
+APPEND.run(port=int(os.environ.get("PORT", 8080)),host='0.0.0.0',debug=True)
 ALLOWED_HOSTS = ['*']
 
 
