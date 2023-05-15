@@ -3,6 +3,9 @@
  # Build the container image
  - name: 'gcr.io/cloud-builders/docker'
    args: ['build', '-t', 'gcr.io/poetic-set-386615/django-app:$COMMIT_SHA', '.','-f','./to_do_app/Dockerfile']
+
+   dir: 'to_do_app'
+   
  # Push the container image to Container Registry
  - name: 'gcr.io/cloud-builders/docker'
    args: ['push', 'gcr.io/poetic-set-386615/django-app:$COMMIT_SHA']
