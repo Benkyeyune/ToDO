@@ -31,7 +31,7 @@ steps:
       - 'europe-west6'
       - '--allow-unauthenticated'
       - '--port'
-      - '8080'
+      - '8000'
       # Add more flags if needed, such as --allow-unauthenticated
   
   # Step 4: (Optional) Run database migrations or other setup tasks
