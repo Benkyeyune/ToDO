@@ -20,4 +20,4 @@ jobs:
       with:
         #file: ./MakWebSystem/Dockerfile
         push: true
-        tags: mugumbyabenon/masele:latest
+        tags: mugumbyabenon/cloudcomputing:latest
