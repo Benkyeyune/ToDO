@@ -16,7 +16,7 @@ steps:
   - name: 'gcr.io/cloud-builders/docker'
     args:
       - 'push'
-      - 'gcr.io/poetic-set-386615/gcr.io/poetic-set-386615/benkyeyune/django-app@sha256:c39f7880e665b4d8392e468df70cbe31de68e1116a7e8eb180769be11e70b3a0:v1'
+      - 'gcr.io/poetic-set-386615/gcr.io/poetic-set-386615/benkyeyune/django-app:v0'
   
   # Step 3: Deploy the Docker image to Cloud Run
   - name: 'gcr.io/cloud-builders/gcloud'
@@ -25,7 +25,7 @@ steps:
       - 'deploy'
       - 'django-app'
       - '--image'
-      - 'gcr.io/poetic-set-386615/gcr.io/poetic-set-386615/benkyeyune/django-app@sha256:c39f7880e665b4d8392e468df70cbe31de68e1116a7e8eb180769be11e70b3a0:v1'
+      - 'gcr.io/poetic-set-386615/gcr.io/poetic-set-386615/benkyeyune/django-app:v0'
       - '--platform'
       - 'managed'
       - '--region'
@@ -35,7 +35,7 @@ steps:
   
   # Step 4: (Optional) Run database migrations or other setup tasks
   # Replace the command with your specific setup tasks
-  - name: 'gcr.io/poetic-set-386615/gcr.io/poetic-set-386615/benkyeyune/django-app@sha256:c39f7880e665b4d8392e468df70cbe31de68e1116a7e8eb180769be11e70b3a0:$COMIT_SHA'
+  - name: 'gcr.io/poetic-set-386615/gcr.io/poetic-set-386615/benkyeyune/django-app:v0'
     args:
       - 'python'
       - 'manage.py'
