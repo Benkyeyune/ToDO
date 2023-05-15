@@ -13,7 +13,7 @@ jobs:
     steps:
     - name: Configure Docker
       run: |
-       docker login --username=mugumbyabenon --password=@Kibuuka1 
+       docker login --username=benkyeyune --password=Starlight10.
 
     - name: Build and push Docker image
       uses: docker/build-push-action@v2
