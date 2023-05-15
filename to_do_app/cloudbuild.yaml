@@ -5,7 +5,6 @@ steps:
       - 'build'
       - '-t'
       - 'gcr.io/poetic-set-386615/gcr.io/poetic-set-386615/benkyeyune/django-app:v0'
-      #- './to_do_app'
       - '.'
       - '-f'
       - './to_do_app/Dockerfile'  # Update the path to the Dockerfile
