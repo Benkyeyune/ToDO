@@ -16,7 +16,7 @@
    - '--image'
    - 'gcr.io/poetic-set-386615/django-app:$COMMIT_SHA'
    - '--region'
-   - 'europe-west6'
+   - 'global'
    - '--allow-unauthenticated'
  images:
  - 'gcr.io/poetic-set-386615/django-app:$COMMIT_SHA'
