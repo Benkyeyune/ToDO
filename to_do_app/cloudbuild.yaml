@@ -28,7 +28,7 @@ steps:
       - '--platform'
       - 'managed'
       - '--region'
-      - 'us-central1'
+      - 'europe-west6'
       - '--allow-unauthenticated'
       - '--port'
       - '8000'
